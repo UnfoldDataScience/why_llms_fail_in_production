@@ -19,15 +19,6 @@ The uncontrolled system exhibits classic production failure patterns:
 - **No audit trail**: Impossible to explain why decisions were made
 - **Unclear failure modes**: When something goes wrong, the explanation is vague ("the model decided")
 
-### Example Failure Scenario
-
-Run the same refund request multiple times in uncontrolled mode:
-- First run: "Approve refund"
-- Second run: "Reject refund" (conversation history changed the context)
-- Third run: "Escalate to manager" (different reasoning path)
-
-The LLM is working correctly, but the system design allows inconsistent behavior.
-
 ## Why the Governed System Works
 
 The governed system implements EDCA-style (Execution-Decision-Control-Audit) architecture:
@@ -156,8 +147,3 @@ User Input → LLM (Reasoning) → Validation → Execution Engine → Result
 ├── .gitignore            # Git ignore rules
 └── README.md             # This file
 ```
-
-## License
-
-This project is for educational purposes demonstrating LLM system architecture patterns.
-
