@@ -113,15 +113,3 @@ User Input → LLM (Reasoning) → Validation → Execution Engine → Result
 
 - **Uncontrolled**: May approve or reject unpredictably
 - **Governed**: Rejects with message: "Reason 'changed mind' not in allowed reasons" (policy enforced)
-
-.
-├── main.py                 # Gradio application
-├── uncontrolled_system.py  # Uncontrolled LLM system
-├── governed_system.py      # Governed EDCA-style system
-├── execution_engine.py     # Deterministic execution layer
-├── utils.py               # Shared utilities
-├── requirements.txt       # Python dependencies
-├── .env.example          # Environment variable template
-├── .gitignore            # Git ignore rules
-└── README.md             # This file
-```
