@@ -50,13 +50,7 @@ User Input → LLM (Reasoning) → Validation → Execution Engine → Result
                               Audit Log
 ```
 
-## Tech Stack
 
-- Python 3.8+
-- Gradio 4.0+ (UI framework)
-- OpenAI API (GPT-4o-mini)
-- Pydantic (validation)
-- Hugging Face Spaces compatible
 
 ## Setup
 
@@ -84,11 +78,6 @@ User Input → LLM (Reasoning) → Validation → Execution Engine → Result
    ```
 7. Open your browser to `http://localhost:7860`
 
-### Hugging Face Spaces
-
-1. Push this repository to a Hugging Face Space
-2. Add `OPENAI_API_KEY` as a secret in Space settings
-3. The app will automatically deploy
 
 ## Usage
 
@@ -125,17 +114,6 @@ User Input → LLM (Reasoning) → Validation → Execution Engine → Result
 - **Uncontrolled**: May approve or reject unpredictably
 - **Governed**: Rejects with message: "Reason 'changed mind' not in allowed reasons" (policy enforced)
 
-## Key Takeaways
-
-1. **The LLM is not the problem**: Both systems use the same LLM model (GPT-4o-mini)
-2. **System design matters**: Architecture determines reliability, not model capability
-3. **Governance is essential**: Production LLM systems need execution control layers
-4. **Determinism requires structure**: Structured outputs + validation = reproducible behavior
-5. **Audit trails enable debugging**: When something fails, you need to know why
-
-## Project Structure
-
-```
 .
 ├── main.py                 # Gradio application
 ├── uncontrolled_system.py  # Uncontrolled LLM system
